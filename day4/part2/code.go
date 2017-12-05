@@ -38,6 +38,8 @@ func validPassword(p string) bool {
 }
 
 func hash(word string) string {
+	// We could probably use the https://golang.org/pkg/sort/ Less/Len/Swap interface to sort it.
+	// maybe to reduce allocations
 	letters := strings.Split(word, "")
 	sort.Strings(letters)
 	return strings.Join(letters, "")
